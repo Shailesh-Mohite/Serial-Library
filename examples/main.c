@@ -29,7 +29,7 @@
 #include <stdio.h>
 #include "serial/serial.h"
 
-serial_t SerialSCI1; ///< Serial library object instance for Comm1
+serial_t SerialCom1; ///< Serial library object instance for Comm1
 
 /*!
  * API returns Serial Receive byte count
@@ -42,15 +42,14 @@ void main(void)
 {
     int16_t c;
     myComm1Init();///< user platform function to initialize serial comm port
-    serial_init (&SerialSCI1);
-    SerialSCI1.sendchar = sendchar; ///< port function to write byte to uart tx register
-    SerialSCI1.enable_tx = enable_tx; ///< port function to enable/disable uart transmit
-    SerialSCI1.enable_rx = enable_rx; ///< port function to enable/disable uart receive
-    SerialSCI1.enable_rx (true);
+    serial_init (&SerialCom1);
+    SerialCom1.sendchar = sendchar; ///< port function to write byte to uart tx register
+    SerialCom1.enable_tx = enable_tx; ///< port function to enable/disable uart transmit
+    SerialCom1.enable_rx = enable_rx; ///< port function to enable/disable uart receive
 
     printf("Hello world\n");
 
-    while (0==serial_rxbuflen(&SerialSCI1))
+    while (0==serial_rxbuflen(&SerialCom1))
     {
         nop();
     }
