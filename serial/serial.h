@@ -56,8 +56,9 @@ extern "C" {
 #define RXBUF_SIZE   128
 
 /* SPECIFY WHETHER TO HAVE BLOCKING TRANSMIT FUNCTION
- * In case of non-blocking use will need to handle transmit buffer size
- * checking and handling
+ * In case of non-blocking user will need to handle transmit buffer size
+ * check and handling during transmition over serial library. Blocking 
+ * is recommended to start with.
  */
 #define TX_BLOCKING_EN  (1)
 /**
