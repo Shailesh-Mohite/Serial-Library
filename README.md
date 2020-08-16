@@ -2,11 +2,11 @@
 Generic light weight serial handler library for embedded devices
 
 # 1. Features
-  1. Platform agnostic
+  1. Platform agnostic !!!
   2. Simple to use/port
-  3. Complex buffer handling built-in
+  3. User need not do complex buffer handling thats built-in !!!
   4. Small footprint
-  5. Multi port handling built-in
+  5. Multi port handling built-in !!!
 
 # 2. Usage Notes
   1. Library Configuration section is available in serial.h
