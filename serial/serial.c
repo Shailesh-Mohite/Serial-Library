@@ -142,7 +142,7 @@ int16_t serial_getchar(serial_t * serial_com)
 int16_t serial_putchar(serial_t *serial_com, uint8_t c)
 {
     // Wait in infinite loop here
-#ifdef TX_BLOCKING
+#if TX_BLOCKING_EN == 1
     while (serial_txbuflen (serial_com) >= TXBUF_SIZE)
         ;
 #else
