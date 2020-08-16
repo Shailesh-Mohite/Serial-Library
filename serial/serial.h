@@ -40,10 +40,30 @@ extern "C" {
 
 #include <stdbool.h>
 
-#define TXBUF_SIZE   128 ///< Serial Transmit buffer size, must be powers of 2 (2,4,8,16..)
-#define RXBUF_SIZE   128 ///< Serial Receive buffer size, must be powers of 2 (2,4,8,16..)
-#define TX_BLOCKING      ///< use blocking Transmit, disable for non-blocking operation
+/**
+ * Serial library Configuration Options start
+ *
+*/
+/* SPECIFY THE TRANSMIT BUFFER SIZE
+ * Serial Transmit buffer size, must be powers of 2 (2,4,8,16..)
+ * This has performance impact during heavy usage of logging
+ */
+#define TXBUF_SIZE   128
 
+/* SPECIFY THE RECEIVE BUFFER SIZE
+ * Serial Receive buffer size, must be powers of 2 (2,4,8,16..)
+ */
+#define RXBUF_SIZE   128
+
+/* SPECIFY WHETHER TO HAVE BLOCKING TRANSMIT FUNCTION
+ * In case of non-blocking use will need to handle transmit buffer size
+ * checking and handling
+ */
+#define TX_BLOCKING_EN  (1)
+/**
+ * Serial library Configuration Options end
+ *
+*/
 /*!
  * Generic Function pointer to user port functions
  *
